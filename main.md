@@ -47,7 +47,7 @@ About twenty to twenty-two glyphs do nearly all the work — alphabet-sized, not
 
 ## 4.2 Abnormally low entropy
 
-Conditional character entropy — how unpredictable the next glyph is given the current one — is the decisive statistic (Figure 1a). Voynichese sits at **2.16 bits/char**, more than a full bit below every comparison language (3.16–3.38). Once you know one glyph, the next is far more constrained than in any natural language.
+Conditional character entropy — how unpredictable the next glyph is given the current one — is the decisive statistic (Figure 1a). Voynichese sits at **2.16 bits/char** (bootstrap 95% CI [2.14, 2.18], size-matched *n* = 6,000), more than a full bit below every comparison language (3.16–3.38; each CI non-overlapping with Voynich's, so the gap is not sampling noise). Once you know one glyph, the next is far more constrained than in any natural language. This replicates the long-established low-entropy result (Tiltman 1967; Reddy & Knight 2011; Bowern & Lindemann 2021); see §7 for the novelty accounting.
 
 ![Voynichese against seven languages. (a) Conditional character entropy: Voynichese is the lone outlier, more predictable than Latin, Italian, German, English, Finnish, or Sanskrit. (b) Word-order information (the drop in next-word uncertainty contributed by word order): Voynichese carries the least of any language tested.](figures/fig1_entropy.png){width=100%}
 
@@ -61,7 +61,7 @@ Shuffling word order destroys any grammar; the gap between the shuffled and the 
 
 ## 4.5 The line is the unit, not the sentence
 
-Words at the start of a written line begin with a gallows glyph three to five times more often than words elsewhere; line-final words are shorter and overwhelmingly end in `-y`. No natural-language prose cares where the physical line breaks. This "line as a functional unit" effect is one of the deepest Voynich anomalies and points to a writing or generation process sensitive to layout.
+Words at the start of a written line begin with a gallows glyph three to five times more often than words elsewhere; line-final words are shorter and overwhelmingly end in `-y`. This "line as a functional unit" effect was first noted by Currier (1976) and is reproduced here. Two caveats temper its weight (see Limitations): the information it carries is *small* (≈0.09 bits/word about a word's first glyph), and the line-initial gallows enrichment is plausibly **scribal decoration** — ornamented opening letters, a medieval-manuscript commonplace — rather than information-bearing structure. It is therefore weakly diagnostic between a cipher and a constructed system, not, as an earlier draft framed it, decisive evidence for a mechanical origin.
 
 ## 4.6 The one-edit ladder
 
@@ -120,12 +120,12 @@ Two conclusions follow, and the distinction between them is the whole point. Fir
 
 # 6. Iconographic readings vs. textual cribs
 
-A productive division emerges when the *pictures* are analysed separately from the *script*: the imagery yields to ordinary art-historical and structural reasoning, while the text does not. Every illustration section was decomposed into recurring visual primitives (each section is built combinatorially from ~18–22 reused elements via repeat/slot operators — a visual analogue of the word grammar), and the labels of each section were subjected to the same crib analysis.
+A productive division emerges when the *pictures* are analysed separately from the *script*: the imagery is interpretable by ordinary art-historical and structural reasoning, while the text is not. Each illustration section appears to be assembled from a limited set of recurring visual elements (a qualitative, vision-assisted decomposition — not a quantified measurement; see Limitations), and the labels of each section were subjected to the same crib analysis.
 
-**Picture-level readings (these succeed).**
+**Picture-level readings (interpretable).**
 
 - **Zodiac (f70–73)** — spring-starting calendar wheels: 12 signs ≈ 12 months, ~30 nymphs/sign ≈ days, ≈ 360 total. The Pisces/March start is the standard medieval European convention (March-25 "Lady Day" New Year). Capricorn and Aquarius are missing because the opening leaf of the quire is lost, not by design.
-- **Rosettes foldout (f85–86)** — a nine-rosette map/cosmological diagram linked by causeways; the (scholarship-cited) castle with swallowtail "Ghibelline" merlons is a Northern-Italian architectural marker consistent with the 1404–1438 date.
+- **Rosettes foldout (f85–86)** — a nine-rosette map/cosmological diagram linked by causeways. A castle with swallowtail ("Ghibelline") merlons is *reported in the scholarship* as a Northern-Italian architectural dating marker; this feature is **not resolvable in our low-resolution facsimile** and is not independently verified here (verification against the high-resolution archive.org/Beinecke scans is pending).
 - **Astronomical (f67–73)** — central celestial-face dials with radial rays, star-rings, and rim text: volvelle-style star diagrams.
 - **Balneological (f75–84)** — pool/reservoir networks joined by tubes with bathing "nymphs"; read variously (unprovably) as balneological, anatomical, or alchemical.
 
@@ -135,9 +135,30 @@ A productive division emerges when the *pictures* are analysed separately from t
 - The rosettes and balneological texts are **ordinary Currier-B prose** (71% and 67% hapax), with no map-legend or technical vocabulary.
 - No label set anchors to any known catalogue (star, plant, place), and the same statistics are reproduced by a procedural generator, so "name-like" ≠ "names".
 
-The consistent result — **iconography legible, script not** — is itself the finding. The pictures can be read in the ordinary sense; the Voynichese resists for want of a key, a crib, or a second text. (Full per-section analyses: `docs/zodiac_crib.md`, `docs/label_crib_all_sections.md`, `docs/rosettes_foldout.md`, `docs/balneological_astronomical.md`.)
+The consistent result — **iconography interpretable, script not readable** — is itself the contribution. The pictures admit plausible art-historical interpretation; the Voynichese resists for want of a key, a crib, or a second text. (Full per-section analyses: `docs/zodiac_crib.md`, `docs/label_crib_all_sections.md`, `docs/rosettes_foldout.md`, `docs/balneological_astronomical.md`.)
 
-# 7. Why the published "solutions" fail
+# 7. Related work, novelty, and limitations
+
+**Honest positioning.** This is not a decipherment and, for the most part, not a discovery. Most core statistics reproduce results established over the last half-century. The table separates what replicates from what is new.
+
+| Result | Status | Prior art |
+|---|---|---|
+| Low conditional entropy (≈2 bits/char) | replicates | Tiltman 1967; Reddy & Knight 2011; Bowern & Lindemann 2021 |
+| Currier A/B dialects | replicates | Currier 1976; Montemurro & Zanette 2013 |
+| Prefix–core–suffix slot grammar | replicates | Tiltman 1967; Stolfi (grey lit); Reddy & Knight 2011 |
+| Zipf's law | replicates | Landini 2001; Amancio et al. 2013 |
+| Binomial word length | replicates | Stolfi (grey lit); Reddy & Knight 2011 |
+| Line-as-functional-unit | replicates | Currier 1976; Vogt 2012 (grey lit) |
+| Finite-state/Markov word generation | replicates (with open code) | Rugg 2004; Schinner 2007; Timm & Schinner 2020 |
+| Multilingual entropy sweep incl. Sanskrit/Arabic, with CIs | partly new | extends Reddy & Knight 2011 |
+| **Position-dependent (slot) cipher null result** | **new** | — |
+| **Systematic, reproducible cross-section label/crib survey** | **new** | partial web-published label studies only |
+| **Open finite-state generator + EVA renderer, validated** | **new (artifact)** | builds on Timm & Schinner 2020 |
+| Test against the Naibbe cipher | timely engagement | Greshko 2025 |
+
+**Limitations (material; see `docs/GODFATHER_REVIEW.md`).** (1) All results use a *single* transcriber/transcription (Takahashi EVA); robustness to EVA vs v101/Cuva segmentation and to alternative transcribers is **not yet tested** and is the chief threat to validity, because the units of analysis are themselves transcription-dependent. (2) Only the entropy result currently carries bootstrap CIs; other statistics are point estimates pending uncertainty quantification. (3) Comparison corpora are single-text per language and Arabic is small (~1.4k tokens); the sweep needs size-matched, multi-text corpora. (4) The combinatorial-imagery decomposition is qualitative and vision-assisted, not measured. (5) The cited rosettes architectural dating is not verified from our facsimile. These gaps are tracked in `docs/PUBLICATION_STRATEGY.md`; the present document is a reproducible working analysis, not a finished submission.
+
+# 8. Why the published "solutions" fail
 
 | Claim | Proposal | Why it collapses |
 |---|---|---|
@@ -151,7 +172,7 @@ The consistent result — **iconography legible, script not** — is itself the 
 
 The recurring pattern is identical to what the cipher search reproduces here: a method "reads" a handful of pre-chosen words, then fails the moment it is applied blind to a new page. That blind-reproducibility test is the bar, and nothing has cleared it.
 
-# 8. Discussion — an honest verdict
+# 9. Discussion — an honest verdict
 
 Every test points the same way. The text is **not** gibberish: Zipf's law, genuine word-order information, and section-specific vocabulary are too much organisation for noise. It is **not** plain or verbose enciphered Latin, Italian, German, Finnish, or Sanskrit, in forward, reversed, or mirror form, nor a different language per section: the entropy is too low, the morphology too rigid, the cipher searches yield no lexicon, and the language sweep places it outside every natural language tested. What it positively resembles is a **rule-governed generative system** — words assembled from position-locked slots by something close to a finite-state machine, written with sensitivity to the physical line, with strong local self-similarity and only thin long-range syntax.
 
@@ -159,6 +180,6 @@ That profile is consistent with two possibilities the statistics alone cannot se
 
 A peer-reviewed development sharpens this balance and corrects an earlier objection of mine. Greshko's "Naibbe cipher" (*Cryptologia*, 2025) is a verbose homophonic substitution — six glyph-mapping tables selected by drawing playing cards, executable by hand with 15th-century materials — that encrypts real Latin and Italian and reproduces the manuscript's low conditional entropy (≈2.0), binomial word length, Zipf, and reduplication at once. This refutes the claim that low entropy excludes a cipher: a *verbose homophonic* scheme reaches Voynich-like statistics while carrying a genuine message, and a table-based cipher is exactly the kind of finite-state mechanism reverse-engineered in §5. It does not, however, reproduce the line-as-unit effect (its author's stated limitation), and — crucially — it is a generative proof-of-concept, not a decryption: it shows such a cipher *can* produce Voynich-like text, not that this text decrypts. The honest net is that the cipher hypothesis is genuinely viable, not that the manuscript is read. The one thing statistics cannot do is recover plaintext without a crib or a key, which is precisely why a century of effort has produced structure but no reading. The value of this analysis is the negative space it maps: the easy answers are excluded, with reproducible evidence, and the remaining hypothesis space is small and sharply defined.
 
-# 9. Reproducibility
+# 10. Reproducibility
 
 All inputs and code are included: the rendered page images (`pages/`), the EVA transcription (`LSI_ivtff_0d.txt`), the comparison corpora, the analysis scripts (`cryptanalysis.py`, `cryptanalysis2.py`, `cryptanalysis3.py`, `decipher_framework.py`, `reverse_engineer.py`), the figure builder (`figures.py`), the synthetic generator (`voynich_generator.py`), and the per-section iconographic/crib analyses (`docs/`). Re-running the scripts regenerates every number and figure in this report.
