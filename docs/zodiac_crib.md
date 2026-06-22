@@ -29,3 +29,14 @@ The zodiac section (12 surviving folios; Capricorn & Aquarius folios are lost) s
 ## Honest verdict
 
 The crib hunt **sharpens the target without unlocking it.** It establishes that the zodiac labels are a genuinely distinct, name-like register (the right place to look), and it rules out the shared-ordinal-counter reading. But it yields **no readable plaintext**: no catalog anchor, an onset pattern that is suggestive but matches no language cleanly, and statistics a constructed system reproduces. Net: a constraint on future attempts, not a decipherment.
+
+## Calendrical framing of the zodiac (added 2026-06-22)
+
+The surviving zodiac runs **Pisces → Sagittarius** (doubled light/dark folios for several signs); **Capricorn and Aquarius are missing**. Iconographic ("picture-level") reading:
+
+- The wheels are a **spring-starting calendar**: 12 signs ≈ 12 months, ~30 nymphs/sign ≈ ~30 days, ≈ 360 total. A Pisces/Aries (≈ March) start is the *normal* medieval European convention (March-25 Annunciation / "Lady Day" New Year, used widely in Europe; England until 1752) — itself the descendant of the old Roman March New Year.
+- **Why Capricorn & Aquarius are absent:** most parsimoniously, the *opening leaf of the zodiac quire is physically lost* (the MS is missing ~14 folios). In a spring-starting cycle those two winter signs precede Pisces and sit on the lost first folio — so their absence follows from the spring start + a missing leaf, not necessarily a deliberate calendrical omission. (They do coincide with the old Roman winter "dead period" later filled by Jan/Feb — an apt resonance, but not needed to explain the gap.)
+
+Historical note (corrected): January 1 became the Roman **consular/civil New Year in 153 BCE** (Livy; consuls moved to Jan 1 over the Celtiberian revolt), *before* Caesar. Caesar's 45 BCE reform was the *solar* Julian calendar, retaining Jan 1; the "Caesar chose Jan 1 to honor Janus" story is a popular misconception.
+
+**Crib limit:** the calendar frame is real and decodes the diagrams' *purpose*, but the ~30 labels/sign do **not** behave as a shared day-counter (cross-sign Jaccard ≈ 0; no sequential ring drift), so the labels do not decode as day numbers. Picture-level reading advances; text-level reading does not.
