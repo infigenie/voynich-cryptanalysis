@@ -1,0 +1,25 @@
+# --- large third-party source material (do NOT redistribute; regenerate locally) ---
+Voynich-Manuscript.pdf
+The_Voynich_Manuscript_Decoded.pdf
+The Naibbe cipher*.pdf
+decoded.txt
+naibbe.txt
+
+# --- derived page images (regenerate: pdftoppm -png -r 150 Voynich-Manuscript.pdf pages/p) ---
+pages/
+*_marg.png
+hi*.png
+
+# --- fetched comparison corpora (regenerate via the analysis scripts) ---
+*_raw.txt
+ar.json
+artitles.txt
+
+# --- third-party font (download per README) ---
+assets/
+
+# --- python noise ---
+__pycache__/
+*.pyc
+.DS_Store
+arabic_try.txt
